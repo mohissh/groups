@@ -1,8 +1,8 @@
 <?php
 
-namespace Musonza\Groups\Traits;
+namespace Mohiqssh\Groups\Traits;
 
-use Musonza\Groups\Models\Post;
+use Mohiqssh\Groups\Models\Post;
 
 trait HasPosts
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Musonza\Groups\Facades;
+namespace Mohiqssh\Groups\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

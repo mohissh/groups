@@ -1,8 +1,8 @@
 <?php
 
-namespace Musonza\Groups\Traits;
+namespace Mohiqssh\Groups\Traits;
 
-use Musonza\Groups\Models\Report;
+use Mohiqssh\Groups\Models\Report;
 
 trait Reporting
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Musonza\Groups\Traits;
+namespace Mohiqssh\Groups\Traits;
 
 trait GroupHelpers
 {

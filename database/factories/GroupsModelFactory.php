@@ -13,7 +13,7 @@ use Faker\Generator as Faker;
 |
  */
 
-$factory->define(Musonza\Groups\Models\User::class, function (Faker $faker) {
+$factory->define(Mohiqssh\Groups\Models\User::class, function (Faker $faker) {
     static $password;
 
     return [

@@ -6,11 +6,11 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\Schema;
-use Musonza\Groups\Facades\GroupsFacade;
-use Musonza\Groups\GroupsServiceProvider;
-use Musonza\Groups\Models\Group;
-use Musonza\Groups\Models\Post;
-use Musonza\Groups\Models\User;
+use Mohiqssh\Groups\Facades\GroupsFacade;
+use Mohiqssh\Groups\GroupsServiceProvider;
+use Mohiqssh\Groups\Models\Group;
+use Mohiqssh\Groups\Models\Post;
+use Mohiqssh\Groups\Models\User;
 use Orchestra\Database\ConsoleServiceProvider;
 use Orchestra\Testbench\TestCase;
 
@@ -110,7 +110,7 @@ abstract class GroupsTestCase extends TestCase
 
     public function createUsers($count = 1)
     {
-        $users = factory('Musonza\Groups\Models\User', $count)->create();
+        $users = factory('Mohiqssh\Groups\Models\User', $count)->create();
 
         if ($count == 1) {
             return $users[0];

@@ -1,10 +1,10 @@
 <?php
 
-namespace Musonza\Groups\Models;
+namespace Mohiqssh\Groups\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Musonza\Groups\Traits\Likes;
-use Musonza\Groups\Traits\Reporting;
+use Mohiqssh\Groups\Traits\Likes;
+use Mohiqssh\Groups\Traits\Reporting;
 
 class Comment extends Model
 {

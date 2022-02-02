@@ -34,7 +34,7 @@ This package allows you to add user groups _(groups, comment, like ...)_ system 
 
 1. Via **Composer**, from the command line, run :
 ```console
-composer require musonza/groups
+composer require mohiqssh/groups
 ```
 
 2. Add the service provider to `./config/app.php` in `providers` array, like :
@@ -42,14 +42,14 @@ composer require musonza/groups
     /*
      * Package Service Providers...
      */
-    Musonza\Groups\GroupsServiceProvider::class,
+    Mohiqssh\Groups\GroupsServiceProvider::class,
 ```
 
 3. You can use the facade for shorter code. 
 Add this to `./config/app.php` at the end of `aliases` array :
 
 ```php
-    'Groups' => Musonza\Groups\Facades\GroupsFacade::class,
+    'Groups' => Mohiqssh\Groups\Facades\GroupsFacade::class,
 ```
 
 > Note : The class is bound to the ioC as Groups.

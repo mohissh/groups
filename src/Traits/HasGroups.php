@@ -1,8 +1,8 @@
 <?php
 
-namespace Musonza\Groups\Traits;
+namespace Mohiqssh\Groups\Traits;
 
-use Musonza\Groups\Models\Group;
+use Mohiqssh\Groups\Models\Group;
 
 trait HasGroups
 {

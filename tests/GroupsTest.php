@@ -125,7 +125,7 @@ class GroupsTest extends GroupsTestCase
         $group1->request($users[1]->id);
         $group1->acceptRequest($users[1]->id);
 
-        $u = Musonza\Groups\Models\User::find($users[1]->id);
+        $u = Mohiqssh\Groups\Models\User::find($users[1]->id);
 
         $this->assertEquals(2, $u->groups->count());
     }

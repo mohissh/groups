@@ -1,8 +1,8 @@
 <?php
 
-namespace Musonza\Groups\Traits;
+namespace Mohiqssh\Groups\Traits;
 
-use Musonza\Groups\Models\Like;
+use Mohiqssh\Groups\Models\Like;
 
 trait Likes
 {

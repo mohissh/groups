@@ -1,9 +1,9 @@
 <?php
 
-namespace Musonza\Groups\Models;
+namespace Mohiqssh\Groups\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Musonza\Groups\Traits\GroupHelpers;
+use Mohiqssh\Groups\Traits\GroupHelpers;
 
 class User extends Authenticatable
 {

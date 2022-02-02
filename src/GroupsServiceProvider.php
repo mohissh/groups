@@ -1,6 +1,6 @@
 <?php
 
-namespace Musonza\Groups;
+namespace Mohiqssh\Groups;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -27,7 +27,7 @@ class GroupsServiceProvider extends ServiceProvider
     private function registerGroups()
     {
         $this->app->bind('groups', function () {
-            return $this->app->make('Musonza\Groups\Groups');
+            return $this->app->make('Mohiqssh\Groups\Groups');
         });
     }
 

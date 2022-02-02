@@ -1,6 +1,6 @@
 <?php
 
-namespace Musonza\Groups\Models;
+namespace Mohiqssh\Groups\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

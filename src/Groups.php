@@ -1,11 +1,11 @@
 <?php
 
-namespace Musonza\Groups;
+namespace Mohiqssh\Groups;
 
-use Musonza\Groups\Models\Comment;
-use Musonza\Groups\Models\Group;
-use Musonza\Groups\Models\Post;
-use Musonza\Groups\Models\User;
+use Mohiqssh\Groups\Models\Comment;
+use Mohiqssh\Groups\Models\Group;
+use Mohiqssh\Groups\Models\Post;
+use Mohiqssh\Groups\Models\User;
 
 class Groups
 {

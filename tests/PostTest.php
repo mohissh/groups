@@ -87,7 +87,7 @@ class PostTest extends GroupsTestCase
     {
         $this->post2 = Groups::createPost($this->postData);
 
-        $user = Musonza\Groups\Models\User::find(1);
+        $user = Mohiqssh\Groups\Models\User::find(1);
 
         $this->assertEquals(2, $user->posts->count());
     }

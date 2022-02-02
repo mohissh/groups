@@ -1,9 +1,9 @@
 <?php
 
-namespace Musonza\Groups\Models;
+namespace Mohiqssh\Groups\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Musonza\Groups\Groups;
+use Mohiqssh\Groups\Groups;
 
 class Group extends Model
 {

@@ -1,6 +1,6 @@
 <?php
 
-use Musonza\Groups\Models\Comment;
+use Mohiqssh\Groups\Models\Comment;
 
 class CommentsTest extends GroupsTestCase
 {
