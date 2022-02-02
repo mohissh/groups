@@ -28,7 +28,7 @@
 
 # Description
 
-This package allows you to add user groups _(groups, comment, like ...)_ system to your Laravel 5 application.
+This package allows you to add user groups _(groups, comment, like ...)_ system to your Laravel 8 application.
 
 # Installation
 
