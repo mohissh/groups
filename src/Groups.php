@@ -36,7 +36,7 @@ class Groups
 
     public static function userModel()
     {
-        return config('musonza_groups.user_model', User::class);
+        return config('mohiqssh_groups.user_model', User::class);
     }
 
     /**
@@ -54,8 +54,8 @@ class Groups
     /**
      * Creates a group.
      *
-     * @param int   $userId owner of group
-     * @param array $data   group information
+     * @param int $userId owner of group
+     * @param array $data group information
      *
      * @return Group
      */

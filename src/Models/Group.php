@@ -19,25 +19,16 @@ class Group extends Model
         'conversation_id',
     ];
 
-    public function users()
-    {
-        return $this->belongsToMany(Groups::userModel(), 'group_user')->withTimestamps();
-    }
 
-    public function posts()
+    public function lord()
     {
-        return $this->belongsToMany(Post::class, 'group_post')->withTimestamps();
-    }
-
-    public function requests()
-    {
-        return $this->hasMany(GroupRequest::class, 'group_id')->with('sender');
+        return $this->belongsTo(Groups::userModel());
     }
 
     /**
      * Creates a group.
      *
-     * @param int   $userId
+     * @param int $userId
      * @param array $data
      *
      * @return Group
@@ -61,9 +52,9 @@ class Group extends Model
         $this->requests()->save($request);
     }
 
-    public function deleteRequest($user_id)
+    public function requests()
     {
-        $this->requests()->where('user_id', $user_id)->delete();
+        return $this->hasMany(GroupRequest::class, 'group_id')->with('sender');
     }
 
     /**
@@ -83,20 +74,6 @@ class Group extends Model
     }
 
     /**
-     * Decline a group join request.
-     *
-     * @param int $userId
-     *
-     * @return Group
-     */
-    public function declineRequest($userId)
-    {
-        $this->deleteRequest($userId);
-
-        return $this;
-    }
-
-    /**
      * Add members / join group.
      *
      * @param mixed $members integer user_id or an array of user ids
@@ -110,6 +87,40 @@ class Group extends Model
         } else {
             $this->users()->attach($members);
         }
+
+        return $this;
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(Groups::userModel(), 'group_user')->where('role', GroupUser::role['user'])->withTimestamps();
+    }
+
+    public function deleteRequest($user_id)
+    {
+        $this->requests()->where('user_id', $user_id)->delete();
+    }
+
+    public function admins()
+    {
+        return $this->belongsToMany(Groups::userModel(), 'group_user')->where('role', GroupUser::role['admin'])->withTimestamps();
+    }
+
+    public function members()
+    {
+        return $this->belongsToMany(Groups::userModel(), 'group_user')->withTimestamps();
+    }
+
+    /**
+     * Decline a group join request.
+     *
+     * @param int $userId
+     *
+     * @return Group
+     */
+    public function declineRequest($userId)
+    {
+        $this->deleteRequest($userId);
 
         return $this;
     }
@@ -150,6 +161,11 @@ class Group extends Model
         }
 
         return $this;
+    }
+
+    public function posts()
+    {
+        return $this->belongsToMany(Post::class, 'group_post')->withTimestamps();
     }
 
     public function detachPost($postId)

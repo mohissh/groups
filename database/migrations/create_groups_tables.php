@@ -35,6 +35,7 @@ class CreateGroupsTables extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('group_id');
+            $table->enum('role', ['admin', 'user'])->default('user');
             $table->timestamps();
 
             $table->foreign('user_id')
