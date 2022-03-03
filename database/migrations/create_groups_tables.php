@@ -150,13 +150,16 @@ class CreateGroupsTables extends Migration
      */
     public function down()
     {
-        Schema::drop('groups');
         Schema::drop('group_user');
-        Schema::drop('posts');
-        Schema::drop('comments');
         Schema::drop('group_post');
+        Schema::drop('comments');
+        Schema::drop('posts');
+        Schema::drop('group_request');
         Schema::drop('likes');
         Schema::drop('reports');
-        Schema::drop('group_request');
+        Schema::drop('group_stats');
+        Schema::drop('groups');
+
+
     }
 }

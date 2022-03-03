@@ -96,6 +96,7 @@ class Group extends Model
             $this->users()->sync($members);
         } else {
             $this->users()->attach($members);
+            $this->groupStat()->increment('member_count');
         }
 
         return $this;
@@ -104,6 +105,11 @@ class Group extends Model
     public function users()
     {
         return $this->belongsToMany(Groups::userModel(), 'group_user')->where('role', GroupUser::role['user'])->withTimestamps();
+    }
+
+    public function groupStat()
+    {
+        return $this->hasOne(GroupStat::class);
     }
 
     public function deleteRequest($user_id)
@@ -119,11 +125,6 @@ class Group extends Model
     public function members()
     {
         return $this->belongsToMany(Groups::userModel(), 'group_user')->withTimestamps();
-    }
-
-    public function groupStat()
-    {
-        return $this->hasOne(GroupStat::class);
     }
 
     /**
