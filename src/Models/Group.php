@@ -21,6 +21,14 @@ class Group extends Model
 
     protected $guarded = [];
 
+    protected static function booted()
+    {
+        static::created(function ($modelInstance) {
+            GroupStat::create([
+                'group_id' => $modelInstance->id
+            ]);
+        });
+    }
 
     public function lord()
     {
@@ -111,6 +119,11 @@ class Group extends Model
     public function members()
     {
         return $this->belongsToMany(Groups::userModel(), 'group_user')->withTimestamps();
+    }
+
+    public function groupStat()
+    {
+        return $this->hasOne(GroupStat::class);
     }
 
     /**

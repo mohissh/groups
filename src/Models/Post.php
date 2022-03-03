@@ -13,6 +13,7 @@ class Post extends Model
 
     protected $fillable = ['title', 'user_id', 'body', 'type', 'extra_info'];
 
+
     public function comments()
     {
         return $this->hasMany(Comment::class, 'post_id')->with('commentator');

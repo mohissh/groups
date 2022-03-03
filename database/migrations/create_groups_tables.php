@@ -130,6 +130,17 @@ class CreateGroupsTables extends Migration
                 ->on('users')
                 ->onDelete('cascade');
         });
+
+        Schema::create('group_stats', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('group_id')->unique();
+            $table->bigInteger('member_count')->default(0);
+            $table->bigInteger('post_count')->default(0);
+            $table->bigInteger('like_count')->default(0);
+            $table->bigInteger('essence_count')->default(0);
+            $table->bigInteger('strategy_count')->default(0);
+            $table->timestamps();
+        });
     }
 
     /**

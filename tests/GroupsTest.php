@@ -4,7 +4,7 @@ class GroupsTest extends GroupsTestCase
 {
     public $groupData;
 
-    public function setUp() : void
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -13,7 +13,7 @@ class GroupsTest extends GroupsTestCase
         $this->groupData = ['name' => 'Lorem'];
     }
 
-    /** @test **/
+    /** @test * */
     public function it_creates_a_group()
     {
         Groups::create($this->user->id, $this->groupData);
@@ -21,7 +21,7 @@ class GroupsTest extends GroupsTestCase
         $this->assertDatabaseHas('groups', ['id' => 1]);
     }
 
-    /** @test **/
+    /** @test * */
     public function it_can_delete_a_group()
     {
         $user = $this->createUsers();
@@ -35,7 +35,7 @@ class GroupsTest extends GroupsTestCase
         $this->assertDatabaseMissing('groups', ['id' => 1]);
     }
 
-    /** @test **/
+    /** @test * */
     public function it_can_update_a_group()
     {
         $user = $this->createUsers();
@@ -57,7 +57,7 @@ class GroupsTest extends GroupsTestCase
         $this->assertEquals(1, $user->id);
     }
 
-    /** @test **/
+    /** @test * */
     public function it_can_add_members_to_group()
     {
         $users = $this->createUsers(4);
@@ -69,7 +69,18 @@ class GroupsTest extends GroupsTestCase
         $this->assertEquals(2, $group->fresh()->users->count());
     }
 
-    /** @test **/
+    /** @test * */
+    public function it_can_create_group_stat()
+    {
+        $user = $this->createUsers();
+        $group = Groups::create($user->id, $this->groupData);
+
+        $this->assertDatabaseHas('group_stats', ['group_id' => $group->id]);
+
+    }
+
+
+    /** @test * */
     public function it_can_make_a_group_request()
     {
         $group = Groups::create($this->user->id, $this->groupData);
@@ -81,7 +92,7 @@ class GroupsTest extends GroupsTestCase
         $this->assertDatabaseHas('group_request', ['group_id' => $group->id, 'user_id' => $users[1]->id]);
     }
 
-    /** @test **/
+    /** @test * */
     public function it_can_accept_a_group_request()
     {
         $group = Groups::create($this->user->id, $this->groupData);
@@ -97,7 +108,7 @@ class GroupsTest extends GroupsTestCase
         $this->assertDatabaseMissing('group_request', ['group_id' => $group->id, 'user_id' => $users[1]->id]);
     }
 
-    /** @test **/
+    /** @test * */
     public function it_can_decline_a_group_request()
     {
         $group = Groups::create($this->user->id, $this->groupData);
@@ -111,7 +122,7 @@ class GroupsTest extends GroupsTestCase
         $this->assertDatabaseMissing('group_request', ['group_id' => $group->id, 'user_id' => $users[1]->id]);
     }
 
-    /** @test **/
+    /** @test * */
     public function it_can_tell_how_many_groups_a_user_is_member_of()
     {
         $users = $this->createUsers(4);
@@ -130,7 +141,7 @@ class GroupsTest extends GroupsTestCase
         $this->assertEquals(2, $u->groups->count());
     }
 
-    /** @test **/
+    /** @test * */
     public function it_can_remove_members_in_group()
     {
         $users = $this->createUsers(4);
