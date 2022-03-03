@@ -7,17 +7,19 @@ use Mohiqssh\Groups\Groups;
 
 class Group extends Model
 {
-    protected $fillable = [
-        'name',
-        'user_id',
-        'description',
-        'short_description',
-        'image',
-        'private',
-        'extra_info',
-        'settings',
-        'conversation_id',
-    ];
+//    protected $fillable = [
+//        'name',
+//        'user_id',
+//        'description',
+//        'short_description',
+//        'image',
+//        'private',
+//        'extra_info',
+//        'settings',
+//        'conversation_id',
+//    ];
+
+    protected $guarded = [];
 
 
     public function lord()

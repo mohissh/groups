@@ -26,6 +26,7 @@ class CreateGroupsTables extends Migration
             $table->unsignedBigInteger('conversation_id')->nullable();
             $table->text('extra_info')->nullable();
             $table->text('settings')->nullable();
+            $table->tinyInteger('is_banned')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
